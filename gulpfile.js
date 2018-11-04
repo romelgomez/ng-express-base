@@ -7,7 +7,7 @@ const ts = require('gulp-typescript');
 
 var tsProject = ts.createProject({
     "declaration": false,
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

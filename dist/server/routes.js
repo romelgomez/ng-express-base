@@ -1,7 +1,7 @@
 'use strict';
-import * as Q from 'q';
-import * as handlebars from 'handlebars';
-import { readFile } from './utils';
+Object.defineProperty(exports, "__esModule", { value: true });
+var handlebars = require("handlebars");
+var utils_1 = require("./utils");
 var Routes = /** @class */ (function () {
     function Routes() {
         this.metaTags = {
@@ -9,15 +9,12 @@ var Routes = /** @class */ (function () {
         };
     }
     Routes.prototype.defaultRoute = function (req, res) {
-        readFile('index.html')
+        var metaTags = this.metaTags;
+        utils_1.readFile('app.html')
             .then(function (file) {
             var template = handlebars.compile(file.toString());
-            return Q.when(template(this.metaTags));
-        })
-            .then(function (html) {
-            res.send(html);
-        }, function (error) {
-            throw error;
+            var html_compiled = template(metaTags);
+            res.send(html_compiled);
         });
     };
     Routes.prototype.paths = function (app) {
@@ -31,4 +28,4 @@ var Routes = /** @class */ (function () {
     };
     return Routes;
 }());
-export { Routes };
+exports.Routes = Routes;

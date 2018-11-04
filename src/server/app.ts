@@ -7,7 +7,6 @@ import * as bodyParser from 'body-parser'; // pull information from HTML POST (e
 import * as methodOverride from 'method-override'; // simulate DELETE and PUT (express4)
 import * as helmet from 'helmet'; // Security
 import { Routes } from './routes'; // App Dependencies
-
 export class App {
 
   protected app: express.Application;

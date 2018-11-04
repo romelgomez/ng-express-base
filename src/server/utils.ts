@@ -5,7 +5,7 @@ import * as Q from 'q';
 export function readFile(fileName) {
     const deferred = Q.defer();
 
-    fs.readFile( path.join(process.cwd(), '/dist', fileName), function (error, file) {
+    fs.readFile( path.join(process.cwd(), '/dist/app', fileName), function (error, file) {
         if (error) {
             deferred.reject(error);
         } else {

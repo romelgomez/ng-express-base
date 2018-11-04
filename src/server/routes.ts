@@ -12,15 +12,12 @@ export class Routes {
   };
 
   defaultRoute (req: express.Request, res: express.Response) {
-    readFile('index.html')
+    const metaTags = this.metaTags;
+    readFile('app.html')
       .then(function(file) {
         const template = handlebars.compile(file.toString());
-        return Q.when(template( this.metaTags ));
-      })
-      .then(function(html) {
-        res.send(html);
-      }, function(error) {
-        throw error;
+        const html_compiled = template(metaTags);
+        res.send(html_compiled);
       });
   }
 
