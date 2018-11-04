@@ -1,12 +1,17 @@
 # NgExpressBase
 
+This angular project has a custom express server that change the "index" AKA "app.html" for handle the changes that need to be made before delivery the index.html to the client or crawlers and that are outside of angular scope. 
+
+In the /src/server/routes.ts file, you can set your URLs to point to microservices, and change the index.html (app.html) base structure as your wish.
+
 ```
-npm i
 # if don't have node yet [Ubuntu Only]
 source node-asap.sh
-gulp de
-```
 
+
+npm i
+gulp dev-server
+```
 --- 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
