@@ -45,6 +45,10 @@ gulp.task('build-server', function() {
         .pipe(gulp.dest('dist/server'));
 });
 
+gulp.task('build-server-w', function() {
+    gulp.watch('src/server/**/*.ts', gulp.series('build-server'));
+});
+
 gulp.task('build-client', function (cb) {
     exec('ng build --prod --build-optimizer', function (err) {
         cb(err);

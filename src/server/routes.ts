@@ -1,6 +1,4 @@
 'use strict';
-import * as Q from 'q';
-import * as path from 'path';
 import * as express from 'express';
 import * as handlebars from 'handlebars';
 import { readFile } from './utils';
